@@ -13,10 +13,10 @@ import { SingletonService } from '../singleton.service';
 export class HomeComponent implements OnInit {
   //@Input() search: string;
 
-  private sessionUser = null;
+  public sessionUser = null;
 
   //Form variables
-  private user = {
+  public user = {
     id: 0,
     name: '',
     email: '',
@@ -24,16 +24,16 @@ export class HomeComponent implements OnInit {
     status: true,
     role_id: '',
   };
-  private roles = [];
+  public roles = [];
 
   //Variables for users list with (pagination, select rows, search)
-  private users = [];
-  private pagesNumber = 10; //Default value
-  private search = '';
-  private pages = [];
-  private currentPage = 1;
+  public users = [];
+  public pagesNumber = 10; //Default value
+  public search = '';
+  public pages = [];
+  public currentPage = 1;
 
-  private donationsList = [];
+  public productsList = [];
 
   constructor(
     public service: ApirestService,
@@ -68,7 +68,7 @@ export class HomeComponent implements OnInit {
     this.service.queryGet(url).subscribe(
       (response) => {
         let result = response.json();
-        this.donationsList = result.data;
+        this.productsList = result.data;
 
         this.currentPage = result['current_page'];
         this.pages = this.singleton.pagination(result);

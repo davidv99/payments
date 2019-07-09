@@ -6,7 +6,7 @@
 
 .card {
   width: 15rem !important;
-  border: solid 1px #563784;
+  border: solid 1px #ffc023;
   & img {
     &:hover {
       -ms-transform: scale(1.1); /* IE 9 */
@@ -15,10 +15,9 @@
     }
   }
   & a {
-    color: #563784;
     text-decoration: none;
     & :hover {
-      color: #00b7f0;
+      color: #fff;
     }
   }
 }
@@ -28,5 +27,5 @@
   margin-right: 5px;
 }
 .section-button {
-  color: #563784;
+  color: #ffc023;
 }
