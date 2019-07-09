@@ -1,0 +1,107 @@
+<aside [class.menu-xs]="menuXs">
+  <div class="logo">
+    <a href="javascript:;" routerLink="/"> </a>
+  </div>
+
+  <!--Barra de menú-->
+  <nav>
+    <div class="user-info p-20 align-items-center">
+      <div *ngIf="logged">
+        <div class="section-profile">
+          <img
+            src="{{ user.url_image }}"
+            *ngIf="user"
+            class="img-fluid user-img rounded-circle"
+          />
+          {{ user.name }} &nbsp;
+        </div>
+        <div class="user-menu p-10-20">
+          <ul>
+            <li>
+              <a href="javascript:;" routerLink="/profile">
+                <i class="fa fa-user-o" aria-hidden="true"></i
+                >{{ 'menu.profile' | translate }}
+              </a>
+            </li>
+            <li>
+              <a href="javascript:;" (click)="logout()">
+                <i class="fa fa-lock" aria-hidden="true"></i
+                >{{ 'authentication.logout' | translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div *ngIf="!logged">
+        <div class="section-profile">
+          <a href="javascript:;" routerLink="/login">
+            <i class="fa fa-user-o" aria-hidden="true"></i>&nbsp;
+            <span>{{ 'authentication.login' | translate }}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <ul>
+      <li class="p-10-20">
+        <a href="javascript:;" routerLink="/permissions">
+          <i class="fa fa-unlock"></i>
+          <span>{{ 'menu.permissions' | translate }}</span>
+        </a>
+      </li>
+      <li class="p-10-20">
+        <a href="javascript:;" routerLink="/users">
+          <i class="fa fa-users"></i>
+          <span>{{ 'menu.users' | translate }}</span>
+        </a>
+      </li>
+      <li class="p-10-20">
+        <a href="javascript:;">
+          <i class="fa fa-cart-plus"></i>
+          <span>{{ 'menu.orders' | translate }}</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>
+
+<div class="page-container" [class.menu-xs]="menuXs">
+  <header>
+    <div class="row h-100">
+      <div class="col-3">
+        <div class="p-20">
+          <a href="javascript:;" (click)="menuXs = !menuXs">
+            <i class="fa fa-bars fa-lg"></i>
+          </a>
+          <a href="javascript:;" routerLink="/"> </a>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="input-group search-bar">
+          <input
+            type="text"
+            placeholder="{{ 'forms.search' | translate }}"
+            [(ngModel)]="search"
+            (keyup.enter)="getDonations('')"
+            class="form-control"
+          />
+
+          <div class="input-group-append">
+            <span class="input-group-text">
+              <i class="fa fa-search fa-lg" aria-hidden="true"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="">
+    <div>
+      <router-outlet></router-outlet>
+    </div>
+    <footer>
+      Footer
+    </footer>
+  </div>
+</div>

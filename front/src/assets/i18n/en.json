@@ -1,0 +1,60 @@
+{
+    "authentication":
+    {
+        "login": "Login",
+        "logout": "Logout"
+    },
+    "menu":
+    {
+        "permissions": "Permissions",
+        "users": "Users",
+        "profile": "Profile",
+        "documents": "Documents",
+        "maps": "Maps"
+    },
+    "forms":
+    {
+    	"email": "Email",
+    	"password": "Password",
+    	"remember_me": "Remember me",
+    	"forgot_password": "Forgot password?",
+    	"login": "Log in",
+        "role_name": "Role name",
+        "permissions": "Permissions",
+        "users": "Users",
+        "name": "Name",
+        "status": "Status",
+        "role": "Role",
+        "last_connection": "Last connection",
+        "rows": "Rows",
+        "select_role": "Select role",
+        "user_form": "User form",
+        "profile": "Profile",
+        "upload_image": "Upload image",
+        "confirm_password": "Confirm password",
+        "documents": "Documents",
+        "title": "Title",
+        "original_name": "Original name",
+        "url_file": "URL file",
+        "click_drag": "Click or drag images here to upload",
+        "maps": "Maps"
+    },
+    "buttons":
+    {
+        "new_role": "New role",
+        "save_role": "Save role",
+        "new_user": "New user",
+        "save": "Save",
+        "cancel": "Cancel",
+        "new_document": "New document",
+        "download_file": "Download file"
+    },
+    "alerts":
+    {
+        "congratulations": "Congratulations!",
+        "confirm": "Confirm",
+        "sure_to_delete": "Are you sure to delete this register?",
+        "yes": "Yes",
+        "cancel": "Cancel"
+    }
+}

@@ -1,0 +1,24 @@
+/*-----src/sass/styles.scss--------*/
+
+//Bootstrap
+@import "~node_modules/bootstrap/scss/bootstrap";
+
+//Toast
+@import "~node_modules/ngx-toastr/toastr-bs4-alert";
+
+//Font-awesome
+//@import "~node_modules/font-awesome/scss/font-awesome";
+
+@import '~node_modules/dropzone/dist/min/dropzone.min.css';
+
+@import "./custom-variables";
+
+//Base
+@import "./base/app";
+@import "./base/generalities";
+
+//Components
+@import "./components/forms";
+
+//Base responsive
+@import "./base/responsive";

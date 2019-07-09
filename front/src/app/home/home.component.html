@@ -1,0 +1,70 @@
+<carousel>
+  <slide>
+    <img
+      src="https://valor-software.com/ngx-bootstrap/assets/images/nature/2.jpg"
+      alt="first slide"
+      class="banner-slide"
+    />
+  </slide>
+  <slide>
+    <img
+      src="https://valor-software.com/ngx-bootstrap/assets/images/nature/3.jpg"
+      alt="second slide"
+      class="banner-slide"
+    />
+  </slide>
+</carousel>
+
+<div class="container-fluid main-section p-40">
+  <div class="d-flex flex-wrap">
+    <div class="p-2">
+      <div class="card">
+        <img
+          class="image-responsive card-img-top"
+          src="https://valor-software.com/ngx-bootstrap/assets/images/nature/3.jpg"
+          alt="Card image cap"
+        />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <div class="section-button">
+            <a href="javascript:;" routerLink="/details/123">
+              <img
+                src="./assets/images/user.png"
+                class="img-fluid user-img rounded-circle"
+              />
+              {{ 'buttons.button_contact' | translate }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list" *ngFor="let donation of donationsList">
+      <div class="p-2">
+        <div class="card">
+          <img
+            class="image-responsive card-img-top"
+            src="{{ donation.principal_image }}"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ donation.title }}</h5>
+            <div class="section-button">
+              <a
+                href="javascript:;"
+                routerLink="/donations/{{ donation.id }}/{{
+                  donation.title
+                }}"
+              >
+                <img
+                  src="{{ donation.user_image }}"
+                  class="img-fluid user-img rounded-circle"
+                />
+                {{ 'buttons.button_contact' | translate }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

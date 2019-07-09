@@ -1,0 +1,83 @@
+<div class="container-fluid main-section p-40">
+    <div class="row">
+    	<div class="col-md-6">
+    		<carousel>
+			    <slide>
+			      <img src="https://valor-software.com/ngx-bootstrap/assets/images/nature/2.jpg" alt="first slide" class="banner-slide">
+			    </slide>
+			    <slide>
+			      <img src="https://valor-software.com/ngx-bootstrap/assets/images/nature/3.jpg" alt="second slide" class="banner-slide">
+			    </slide>
+			</carousel>
+    	</div>
+    	<div class="col-md-6 details">
+    		<h2>{{ detailsDonation.title }}</h2>
+    		<p>{{ detailsDonation.description }}</p>
+    		<br>
+
+    		<div class="row">
+    			<div class="col-md-12">
+    				<span>{{ 'forms.status' | translate }}:</span> {{ detailsDonation.status }}
+    				<br>
+    			</div>
+    			<div class="col-md-12"></div>
+<div class="spacer20"></div>
+    			<div class="col-md-12">
+
+    				<div class="last">
+    					<button class="btn btn-primary">{{ 'buttons.button_contact' | translate }}</button>
+    				</div>
+    			</div>
+    		</div>
+
+    		
+    	</div>
+    </div>
+
+    <div class="row">
+    	<div class="comments p-20">
+    		<h2>{{ 'forms.comments' | translate }}</h2>
+			<div class="row p-20">
+				<div class="col-sm-12">
+		            <div class="panel panel-white post panel-shadow">
+		                <div class="post-heading">
+		                    <div class="pull-left image">
+		                        <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+		                    </div>
+		                    <div class="pull-left meta">
+		                        <div class="title h5">
+		                            <a href="#"><b>Ryan Haywood</b></a>
+		                            made a post.
+		                        </div>
+		                        <h6 class="text-muted time">1 minute ago</h6>
+		                    </div>
+		                </div> 
+		                <div class="post-description"> 
+		                    <p>Bootdey is a gallery of free snippets resources templates and utilities for bootstrap css hmtl js framework. Codes for developers and web designers</p>
+		                    <!-- <div class="stats">
+		                        <a href="#" class="btn btn-default stat-item">
+		                            <i class="fa fa-thumbs-up icon"></i>2
+		                        </a>
+		                        <a href="#" class="btn btn-default stat-item">
+		                            <i class="fa fa-thumbs-down icon"></i>12
+		                        </a>
+		                    </div> -->
+		                </div>
+		            </div>
+		        </div>
+			</div>
+		</div>
+    </div>
+
+    <div class="row p-20">
+		
+		<div class="col-sm-12">
+            <div class="form-group">
+			  <label for="comment"><h2>{{ 'forms.form_comments' | translate }}:</h2></label>
+			  <textarea class="form-control" rows="5" id="comment"></textarea>
+			  <button class="btn btn-primary">{{ 'buttons.send' | translate }}</button>
+			</div>
+        </div>
+	</div>
+</div>
+

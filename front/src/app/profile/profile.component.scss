@@ -1,0 +1,26 @@
+.section-profile {
+	float: none;
+	margin: 0 auto;
+	img {
+  		height: 100%;
+  	}
+}
+
+.card{
+	width: 15rem!important;
+	border: solid 1px #563784;
+	& img{
+		&:hover {
+		    -ms-transform: scale(1.1); /* IE 9 */
+		    -webkit-transform: scale(1.1); /* Safari 3-8 */
+		    transform: scale(1.1); 
+		}
+	}
+	& a{
+		color: #563784;
+		text-decoration: none;
+		& :hover{
+			color:#00b7f0;
+		}
+	}
+}

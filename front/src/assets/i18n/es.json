@@ -1,0 +1,66 @@
+{
+  "authentication": {
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión"
+  },
+  "menu": {
+    "permissions": "Permisos",
+    "users": "Usuarios",
+    "profile": "Perfíl",
+    "product_description": "Descripción del producto",
+    "orders": "Ordenes de compra"
+  },
+  "forms": {
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "remember_me": "Recordarme",
+    "forgot_password": "Olvidaste la contraseña?",
+    "login": "Iniciar sesión",
+    "role_name": "Nombre rol",
+    "permissions": "Permisos",
+    "users": "Usuarios",
+    "name": "Nombre",
+    "status": "Estado",
+    "role": "Rol",
+    "last_connection": "Última conexión",
+    "rows": "Filas",
+    "select_role": "Selecciona un rol",
+    "user_form": "Formulario usuario",
+    "profile": "Perfíl",
+    "upload_image": "Cargar imagen",
+    "confirm_password": "Confirmar contraseña",
+    "documents": "Documentos",
+    "title": "Título",
+    "original_name": "Nombre original",
+    "url_file": "URL archivo",
+    "click_drag": "Haga clic o arrastre imágenes aquí para cargar",
+    "maps": "Mapas",
+    "search": "Buscar...",
+    "comments": "Comentarios:",
+    "form_comments": "Deja un comentario",
+    "phone": "Teléfono",
+    "my-donations": "Mis donaciones",
+    "value": "Valor",
+    "description": "Descripción"
+  },
+  "buttons": {
+    "new_role": "Nuevo rol",
+    "save_role": "Guardar rol",
+    "new_user": "Nuevo usuario",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "button_contact": "Contactar",
+    "send": "Enviar",
+    "edit": "Editar",
+    "view": "Ver",
+    "return": "Volver",
+    "delete": "Borrar"
+  },
+  "alerts": {
+    "congratulations": "Felicitaciones!",
+    "confirm": "Confirmar",
+    "sure_to_delete": "Estás seguro de eliminar este registro?",
+    "yes": "Sí",
+    "cancel": "Cancelar"
+  }
+}
