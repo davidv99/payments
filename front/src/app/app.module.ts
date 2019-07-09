@@ -22,14 +22,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { UiSwitchModule } from 'ngx-ui-switch';
 import { AppRoutingModule } from './/app-routing.module';
 import { AppComponent } from './app.component';
+import { WidgetsModule } from './components/widgets/widgets.module';
 import { DetailsComponent } from './details/details.component';
-import { DonationsComponent } from './donations/donations.component';
+import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { PermissionsComponent } from './permissions/permissions.component';
 import { ProfileComponent } from './profile/profile.component';
 import { UsersComponent } from './users/users.component';
-import { HomeComponent } from './home/home.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -46,11 +46,11 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     UsersComponent,
     PermissionsComponent,
     ProfileComponent,
-    DonationsComponent,
     DetailsComponent,
     HomeComponent,
   ],
   imports: [
+    WidgetsModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,

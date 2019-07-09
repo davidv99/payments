@@ -31,6 +31,7 @@
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "marker-animate-unobtrusive": "^0.2.8",
+    "moment": "^2.24.0",
     "ngx-bootstrap": "^3.0.0",
     "ngx-dropzone-wrapper": "^6.1.0",
     "ngx-image-cropper": "^0.2.8",
