@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email', 150)->unique();
             $table->string('password', 100);
             $table->string('language', 10)->default('es');
-            $table->string('image', 255);
+            $table->string('image', 255)->nullable()->default(null);
             $table->tinyInteger('status')->default(0);
             $table->timestamp('last_date_connection');
             //------- Uncomment for mobile applications ---------//
