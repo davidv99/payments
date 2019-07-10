@@ -30,31 +30,21 @@ return array(
 	'updated_product' => 'Producto Actualizado',
 	'deleted_product' => 'Producto eliminado',
 
-	/*
-	| ---------------------------------------------------
-	| Categories translations lines
-	| ---------------------------------------------------
-	*/
-	'created_category' => 'Categoria creada',
-	'updated_category' => 'Categoria actualizada',
-	'deleted_category' => 'Categoria eliminada',
 
 	/*
 	| ---------------------------------------------------
-	| Services translations lines
+	| Orders translations lines
 	| ---------------------------------------------------
 	*/
-	'created_service' => 'Servicio creado',
-	'updated_service' => 'Servicio actualizado',
-	'deleted_service' => 'Servicio eliminado',
+
+	'order_without_products'=> 'Orden sin productos registrados',
+	'error_on_save_order'	=> 'Se ha presentado un error en el sistema, valide sus datos y vuelvalo a intentar',
 
 	/*
 	| ---------------------------------------------------
-	| Points translations lines
+	| transactions translations lines
 	| ---------------------------------------------------
 	*/
 
-	'created_points' => 'Puntos creado',
-	'updated_points' => 'Puntos actualizado',
-	'deleted_points' => 'Puntos eliminado',
+	'failed_create_request' => 'La creación de la transacción falló, valide sus datos y vuelvalo a intentar'
 );

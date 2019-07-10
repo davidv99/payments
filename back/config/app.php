@@ -220,4 +220,19 @@ return [
         'Excel' => Maatwebsite\Excel\Facades\Excel::class,
     ],
 
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Gloabal urs
+    |--------------------------------------------------------------------------
+    |
+    | these parameters are used as backup for the .env file
+    |
+    */
+
+    'LOGIN_CREDENTIAL' => env('LOGIN_CREDENTIAL', '6dd490faf9cb87a9862245da41170ff2'),
+    'TRANKEY_CREDENTIAL' => env('TRANKEY_CREDENTIAL', '024h1IlD'),
+    'BASE_URL_SERVICE' => env('BASE_URL_SERVICE','https://dev.placetopay.com/redirection/'),
+    'END_POINT' => env('END_POINT', 'https://test.placetopay.com/redirection/api/session/'),
 ];

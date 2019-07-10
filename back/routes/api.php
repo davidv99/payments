@@ -87,6 +87,8 @@ Route::prefix('v1')->group(function () {
         Route::delete('products/{id}', 'ProductsController@destroy');
         Route::get('products-user/{id}','ProductsController@donationsUser');
 
+        //------ Orders routes ------//
+        Route::resource('orders', 'OrdersController');
 
 	});
 
