@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('language', 10)->default('es');
             $table->string('image', 255)->nullable()->default(null);
             $table->tinyInteger('status')->default(0);
-            $table->timestamp('last_date_connection');
+            $table->timestamp('last_date_connection')->nullable()->default(null);
             //------- Uncomment for mobile applications ---------//
             //$table->string('device_token', 255);
             //$table->string('platform', 45);
