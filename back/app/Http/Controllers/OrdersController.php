@@ -121,7 +121,7 @@ class OrdersController extends Controller
             $auth =  (new WebServiceController)->makeAuth();
 
             $expirationDate = date('c');
-            $$expirationDate = date('c' , strtotime($$expirationDate."+ 1 days"));
+            $$expirationDate = date('c' , strtotime($expirationDate."+ 1 days"));
             $ip = (new WebServiceController)->getRealIpAddr();
             
             $requestBody = array(
@@ -152,16 +152,22 @@ class OrdersController extends Controller
             
             $responseRequest = (new WebServiceController)->makeRequest('api/session/', $requestBody);
             
-            if($responseRequest['status']['status'] == 'OK'){
+            if ($responseRequest['status']['status'] == 'OK')
+            {
                 
+                $url = $responseRequest['processUrl'];
                 $order->request_id = $responseRequest['requestId'];
+                $order->request_url = $url;
+
                 $order->save();
                 DB::commit();
                 $message = $responseRequest['status']['message'];
-                $url = $responseRequest['processUrl'];
+                
                 $this->_response = ['success' => true, 'message' => $message, 'url'=> $url];
             
-            }else{
+            }
+            else
+            {
                 DB::rollBack();
                 return response()->json(['success' => false, 'message' => trans('messages.failed_create_request')]);
             }
@@ -207,7 +213,51 @@ class OrdersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id = $request->input('id');
+
+
+        if(0 != $id)
+        {
+            $emailValidation = 'unique:users,email,' . $id;
+        }
+
+        $validator = Validator::make($request->all(), [
+            'id' => 'required',
+            'status' => 'required'
+        ]);
+
+        if ($validator->fails()) 
+        {
+            $errors = $validator->errors();
+
+            return response()->json(['success' => false, 'message' => $errors->all()]);
+        }
+
+        try 
+        {
+            $order = Order::find($id);
+
+            if (null == $order)
+            {
+                return response()->json(['success'=> false, 'message' => trans('messages.un_exist_order')]);
+            }
+
+            $order->status = $request->input('status'); 
+            if (false === $order->save())
+            {
+                return response()->json([], self::STATUS_INTERNAL_SERVER_ERROR);
+            }
+
+            $this->_response = ['success' => true, 'message' => trans('messages.order_updated')];
+        } 
+        catch (Exception $e) 
+        {
+            //Write error in log
+            Log::error($e->getMessage() . ' line: ' . $e->getLine() . ' file: ' . $e->getFile());
+            return response()->json([], self::STATUS_INTERNAL_SERVER_ERROR);
+        }
+
+        return response()->json($this->_response, self::STATUS_OK);
     }
 
     /**

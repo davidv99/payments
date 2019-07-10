@@ -29,6 +29,7 @@ class CreateOrdersTable extends Migration
             $table->string('currency', 20);
             $table->string('status', 20);
             $table->string('request_id', 60)->nullable();
+            $table->string('request_url', 200)->nullable();
             $table->timestamps();
         });
     }
