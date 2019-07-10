@@ -46,5 +46,8 @@ return array(
 	| ---------------------------------------------------
 	*/
 
-	'failed_create_request' => 'La creación de la transacción falló, valide sus datos y vuelvalo a intentar'
+	'failed_create_request' => 'La creación de la transacción falló, valide sus datos y vuelvalo a intentar',
+	'transactions_payment_pending'  => 'La transacción se encuentra en estado PENDIENTE',
+	'transactions_payment_expired'  => 'La transacción se encuentra en estado EXPIRADA',
+	'transactions_payment_success'  => 'La transacción se encuentra en estado PAGADA'
 );

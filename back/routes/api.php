@@ -90,6 +90,8 @@ Route::prefix('v1')->group(function () {
         //------ Orders routes ------//
         Route::resource('orders', 'OrdersController');
 
+        //------ Payments routes ------//
+        Route::post('payments', 'PaymentsController@checkPaymentStatus');
 	});
 
 });
