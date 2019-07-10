@@ -119,8 +119,9 @@ class OrdersController extends Controller
 
             //We need auth data to make request
             $auth =  (new WebServiceController)->makeAuth();
-            $expiration = date('c');
-            $expiration = date('c' , strtotime($expiration."+ 1 days"));
+
+            $expirationDate = date('c');
+            $$expirationDate = date('c' , strtotime($$expirationDate."+ 1 days"));
             $ip = (new WebServiceController)->getRealIpAddr();
             
             $requestBody = array(
@@ -138,19 +139,19 @@ class OrdersController extends Controller
                     'reference'   => $request->input('product'),
                     'description' => $request->input('description'),
                     'amount'      => array(
-                        'currency' => 'COP',
+                        'currency' => $request->input('currency'),
                         'total'    => $request->input('total_with_iva'),
                     ),
                     'allowPartial'=> 'false'
                 ),
-                'expiration' => $expiration,
+                'expiration' => $$expirationDate,
                 'returnUrl'  => env('RETURN_URL').'/4ere31='.$order->id,
                 'ipAddress'  => $ip,
                 'userAgent'  => $_SERVER['HTTP_USER_AGENT']
             );
             
             $responseRequest = (new WebServiceController)->makeRequest('api/session/', $requestBody);
-
+            
             if($responseRequest['status']['status'] == 'OK'){
                 
                 $order->request_id = $responseRequest['requestId'];
@@ -194,16 +195,8 @@ class OrdersController extends Controller
         return response()->json($this->_response, self::STATUS_OK);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+    
+    
 
     /**
      * Update the specified resource in storage.
