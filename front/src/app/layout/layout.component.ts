@@ -1,9 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { ApirestService } from '../apirest.service';
@@ -37,7 +32,7 @@ export class LayoutComponent implements OnInit {
     public service: ApirestService,
     private router: Router,
     private singleton: SingletonService,
-  ) {}
+  ) { }
 
   getDonations(page) {
     if (this.search != '') {
@@ -98,7 +93,7 @@ export class LayoutComponent implements OnInit {
         localStorage.setItem('user', null);
         localStorage.setItem('token', null);
 
-        this.router.navigate(['/']);
+        location.reload();
       },
       (err) => {
         console.log(err);
@@ -107,7 +102,7 @@ export class LayoutComponent implements OnInit {
           localStorage.setItem('user', null);
           localStorage.setItem('token', null);
 
-          this.router.navigate(['/']);
+          location.reload();
         }
       },
     );
