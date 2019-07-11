@@ -89,6 +89,7 @@ Route::prefix('v1')->group(function () {
 
         //------ Orders routes ------//
         Route::resource('orders', 'OrdersController');
+        Route::post('orders/update', 'OrdersController@update');
 
         //------ Payments routes ------//
         Route::post('payments', 'PaymentsController@checkPaymentStatus');

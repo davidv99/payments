@@ -1,0 +1,69 @@
+<div class="container-fluid main-section p-40">
+  <div class="row">
+    <div class="col">
+      <div class="soft-box p-5 bg-white">
+        <h1 class="title">Lista de ordenes</h1>
+      </div>
+    </div>
+  </div>
+  <div class="spacer20"></div>
+
+  <div class="spacer10"></div>
+  <div class="row d-flex align-items-center">
+    <div class="col-md-1">
+      <select [(ngModel)]="pagesNumber" name="pagesNumber" class="form-control" (change)="getOrders('')">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      {{ 'forms.rows' | translate }}
+    </div>
+    <div class="col-md-3 offset-md-4">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text"><i class="fa fa-search"></i></div>
+        </div>
+        <input [(ngModel)]="search" name="search" type="text" class="form-control" (keyup)="getOrders('')">
+      </div>
+    </div>
+  </div>
+  <div class="spacer10"></div>
+  <div class="row">
+    <div class="col">
+      <div class="soft-box p-5 bg-white">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Nombre cliente</th>
+                <th>Teléfono</th>
+                <th>Product</th>
+                <th>Valor</th>
+                <th>Estado transacción</th>
+                <th>&nbsp;&nbsp;&nbsp;</th>
+              </tr>
+            </thead>
+            <tbody *ngIf="orders.length > 0">
+              <tr *ngFor="let order of orders">
+                <td>{{order.id}}</td>
+                <td>{{order.customer_name}} {{order.customer_surname}}</td>
+                <td>{{order.customer_mobile}}</td>
+                <td>{{order.product}}</td>
+                <td>{{order.currency}} {{order.total_with_iva | number}}</td>
+                <td>{{order.status}}</td>
+                <td class="text-center">
+                  &nbsp;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="spacer20"></div>
+</div>

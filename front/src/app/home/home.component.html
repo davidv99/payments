@@ -1,17 +1,9 @@
 <carousel>
   <slide>
-    <img
-      src="https://valor-software.com/ngx-bootstrap/assets/images/nature/2.jpg"
-      alt="first slide"
-      class="banner-slide"
-    />
+    <img src="https://valor-software.com/ngx-bootstrap/assets/images/nature/2.jpg" alt="first slide" class="banner-slide" />
   </slide>
   <slide>
-    <img
-      src="https://valor-software.com/ngx-bootstrap/assets/images/nature/3.jpg"
-      alt="second slide"
-      class="banner-slide"
-    />
+    <img src="https://valor-software.com/ngx-bootstrap/assets/images/nature/3.jpg" alt="second slide" class="banner-slide" />
   </slide>
 </carousel>
 
@@ -19,11 +11,7 @@
   <div class="d-flex flex-wrap">
     <div class="p-2">
       <div class="card">
-        <img
-          class="image-responsive card-img-top"
-          src="http://lcscolombia.com/empresas/wp-content/uploads/sites/3/2016/01/ME088E-A.21.jpg"
-          alt="Card image cap"
-        />
+        <img class="image-responsive card-img-top" src="http://lcscolombia.com/empresas/wp-content/uploads/sites/3/2016/01/ME088E-A.21.jpg" alt="Card image cap" />
         <div class="card-body">
           <h5 class="card-title">Imac i5</h5>
           <div class="content-card">
@@ -32,12 +20,8 @@
             aliqua. Ut enim ad minim veniam
           </div>
           <div class="section-button">
-            <a
-              href="javascript:;"
-              class="btn btn-primary"
-              routerLink="home/123/imac-i5"
-            >
-              {{ 'buttons.datails' | translate }}
+            <a href="javascript:;" class="btn btn-primary" routerLink="home/123/imac-i5">
+              {{ 'buttons.details' | translate }}
             </a>
           </div>
         </div>
@@ -46,24 +30,14 @@
     <div class="list" *ngFor="let donation of donationsList">
       <div class="p-2">
         <div class="card">
-          <img
-            class="image-responsive card-img-top"
-            src="{{ donation.principal_image }}"
-            alt="Card image cap"
-          />
+          <img class="image-responsive card-img-top" src="{{ donation.principal_image }}" alt="Card image cap" />
           <div class="card-body">
             <h5 class="card-title">{{ donation.title }}</h5>
             <div class="section-button">
-              <a
-                href="javascript:;"
-                routerLink="/donations/{{ donation.id }}/{{
+              <a href="javascript:;" routerLink="/donations/{{ donation.id }}/{{
                   donation.title
-                }}"
-              >
-                <img
-                  src="{{ donation.user_image }}"
-                  class="img-fluid user-img rounded-circle"
-                />
+                }}">
+                <img src="{{ donation.user_image }}" class="img-fluid user-img rounded-circle" />
                 {{ 'buttons.button_contact' | translate }}
               </a>
             </div>

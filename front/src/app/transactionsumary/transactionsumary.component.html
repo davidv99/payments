@@ -1,0 +1,99 @@
+<div class="container-fluid main-section p-40">
+  <div class="page-wrapper">
+
+    <div id="body-content">
+      <ng-container *ngIf="showPaymentButton">
+        <h3>Lo sentimos</h3>
+        <p>Hemos detectado de que tu transacción aun se encuentra pendiente de pago, puedes pagarla dando clic en el siguiente botón</p>
+        <button class="btn btn-primary" (click)="payment()">
+          Pagar
+        </button>
+      </ng-container>
+      <button class="btn btn-primary" [routerLink]="['/']" routerLinkActive="router-link-active">
+        Volver
+      </button>
+
+    </div>
+  </div>
+
+  <div class="container-fluid" *ngIf="!showPaymentButton">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12 text-left">
+          <h3 class="titles">Detalles pago</h3>
+        </div>
+      </div>
+
+      <div class="spacer40"></div>
+
+      <div class="col-md-12 ">
+        <div class="row details p-10">
+          <div class="col-md-8">
+            <div class="table-responsive">
+              <table class="table border">
+                <thead>
+                  <tr>
+                    <th scope="col">Resumen </th>
+
+                    <th scope="col">Detalles</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr>
+                    <th class="sub-title"> Banco: </th>
+                    <th>
+                      {{sumaryPaiment.bank_name}}
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="sub-title"> Estado: </th>
+                    <th>
+                      {{resultStatus}}
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th class="sub-title"> No Autorizaci&oacute;n: </th>
+                    <th>
+                      {{sumaryPaiment.authorization}}
+                    </th>
+                  </tr>
+                  <tr>
+                    <th class="sub-title"> Fecha y hora de la transacci&oacute;n: </th>
+                    <th>
+                      {{sumaryPaiment.date}}
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th class="sub-title" scope="row">
+                      Valor de la transacción:
+                    </th>
+                    <th>
+                      {{sumaryPaiment.currency}} {{sumaryPaiment.amount | number}}
+                    </th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="overlay" [class.open]="showOverlay">
+    <div class="img text-center">
+      <img src="../../assets/images/loading.png" alt="" style=" width: 15%;margin-top: 5%">
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-center loading-message">
+        <h2>{{mensaje}}</h2>
+      </div>
+    </div>
+  </div>
+
+</div>

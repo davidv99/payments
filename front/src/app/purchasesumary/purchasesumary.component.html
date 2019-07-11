@@ -1,0 +1,78 @@
+<div class="container-fluid main-section p-40">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Resumen de compra</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Imac i5</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+        irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum.
+      </p>
+    </div>
+    <div class="col-md-6 details">
+      <br />
+
+      <div class="row">
+        <div class="col-md-12">
+          <span>Completa los datos para continuar con la
+            transacción</span>
+
+        </div>
+        <div class="spacer10"></div>
+        <div class="col-md-12">
+          <div class="form-group">
+            <input type="text" [(ngModel)]="customer_name" class="form-control" placeholder="Nombre" />
+          </div>
+
+          <div class="form-group">
+            <input type="text" [(ngModel)]="customer_surname" class="form-control" placeholder="Apellido" />
+          </div>
+
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <select [(ngModel)]="customer_type_document" class="form-control">
+              <option value="">Selecciona el tipo de documento</option>
+              <option value="CC">CC</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" [(ngModel)]="customer_document" class="form-control" placeholder="Número de documento" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="email" [(ngModel)]="customer_email" class="form-control" placeholder="Correo electrónico" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <input type="number" [(ngModel)]="customer_mobile" class="form-control" placeholder="Número teléfonico" />
+          </div>
+        </div>
+
+        <div class="spacer20"></div>
+        <div class="col-md-12">
+          <div class="last">
+
+            <button class="btn btn-primary" (click)="createOrder()">
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

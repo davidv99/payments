@@ -4,20 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  TranslateLoader,
-  TranslateModule,
-} from '@ngx-translate/core';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { CarouselModule } from 'ngx-bootstrap';
 import { AccordionModule } from 'ngx-bootstrap/accordion';
-import {
-  DropzoneConfigInterface,
-  DropzoneModule,
-  DROPZONE_CONFIG,
-} from 'ngx-dropzone-wrapper';
+import { DropzoneConfigInterface, DropzoneModule, DROPZONE_CONFIG } from 'ngx-dropzone-wrapper';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { ngxLoadingAnimationTypes, NgxLoadingModule } from 'ngx-loading';
 import { ToastrModule } from 'ngx-toastr';
 import { UiSwitchModule } from 'ngx-ui-switch';
 import { AppRoutingModule } from './/app-routing.module';
@@ -29,7 +23,10 @@ import { LayoutComponent } from './layout/layout.component';
 import { LoginComponent } from './login/login.component';
 import { PermissionsComponent } from './permissions/permissions.component';
 import { ProfileComponent } from './profile/profile.component';
+import { PurchasesumaryComponent } from './purchasesumary/purchasesumary.component';
 import { UsersComponent } from './users/users.component';
+import { TransactionsumaryComponent } from './transactionsumary/transactionsumary.component';
+import { OrdersComponent } from './orders/orders.component';
 
 const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   // Change this to your upload POST address:
@@ -48,9 +45,20 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
     ProfileComponent,
     DetailsComponent,
     HomeComponent,
+    PurchasesumaryComponent,
+    TransactionsumaryComponent,
+    OrdersComponent,
   ],
   imports: [
     WidgetsModule,
+    NgxLoadingModule.forRoot({
+      animationType: ngxLoadingAnimationTypes.wanderingCubes,
+      backdropBackgroundColour: 'rgba(0,0,0,0.1)',
+      backdropBorderRadius: '4px',
+      primaryColour: '#ffffff',
+      secondaryColour: '#ffffff',
+      tertiaryColour: '#ffffff'
+    }),
     BrowserModule,
     BrowserAnimationsModule,
     HttpModule,
@@ -80,7 +88,7 @@ const DEFAULT_DROPZONE_CONFIG: DropzoneConfigInterface = {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {

@@ -8,25 +8,19 @@
     <div class="user-info p-20 align-items-center">
       <div *ngIf="logged">
         <div class="section-profile">
-          <img
-            src="{{ user.url_image }}"
-            *ngIf="user"
-            class="img-fluid user-img rounded-circle"
-          />
+          <img src="{{ user.url_image }}" *ngIf="user" class="img-fluid user-img rounded-circle" />
           {{ user.name }} &nbsp;
         </div>
         <div class="user-menu p-10-20">
           <ul>
             <li>
               <a href="javascript:;" routerLink="/profile">
-                <i class="fa fa-user-o" aria-hidden="true"></i
-                >{{ 'menu.profile' | translate }}
+                <i class="fa fa-user-o" aria-hidden="true"></i>{{ 'menu.profile' | translate }}
               </a>
             </li>
             <li>
               <a href="javascript:;" (click)="logout()">
-                <i class="fa fa-lock" aria-hidden="true"></i
-                >{{ 'authentication.logout' | translate }}
+                <i class="fa fa-lock" aria-hidden="true"></i>{{ 'authentication.logout' | translate }}
               </a>
             </li>
           </ul>
@@ -43,20 +37,20 @@
     </div>
 
     <ul>
-      <li class="p-10-20">
+      <!-- <li class="p-10-20">
         <a href="javascript:;" routerLink="/permissions">
           <i class="fa fa-unlock"></i>
           <span>{{ 'menu.permissions' | translate }}</span>
         </a>
-      </li>
+      </li> -->
       <li class="p-10-20">
-        <a href="javascript:;" routerLink="/users">
-          <i class="fa fa-users"></i>
-          <span>{{ 'menu.users' | translate }}</span>
+        <a href="javascript:;" routerLink="/">
+          <i class="fa fa-list"></i>
+          <span>{{ 'menu.products' | translate }}</span>
         </a>
       </li>
       <li class="p-10-20">
-        <a href="javascript:;">
+        <a href="javascript:;" routerLink="/orders">
           <i class="fa fa-cart-plus"></i>
           <span>{{ 'menu.orders' | translate }}</span>
         </a>
@@ -79,13 +73,7 @@
 
       <div class="col">
         <div class="input-group search-bar">
-          <input
-            type="text"
-            placeholder="{{ 'forms.search' | translate }}"
-            [(ngModel)]="search"
-            (keyup.enter)="getDonations('')"
-            class="form-control"
-          />
+          <input type="text" placeholder="{{ 'forms.search' | translate }}" [(ngModel)]="search" (keyup.enter)="getDonations('')" class="form-control" />
 
           <div class="input-group-append">
             <span class="input-group-text">
@@ -101,7 +89,7 @@
       <router-outlet></router-outlet>
     </div>
     <footer>
-      Footer
+
     </footer>
   </div>
 </div>

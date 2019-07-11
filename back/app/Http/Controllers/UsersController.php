@@ -495,5 +495,5 @@ class UsersController extends Controller
         $success['name'] =  $user->name;
         return response()->json(['success'=>$success], $this-> successStatus); 
     }
-    }
 }
+

@@ -26,7 +26,13 @@ class OrdersController extends Controller
             $orders = Order::where('customer_name', 'like', '%'.$search.'%')
                             ->orWhere('customer_email', 'like', '%'.$search.'%')
                             ->orWhere('customer_mobile', 'like', '%'.$search.'%')
+                            ->orWhere('product', 'like', '%'.$search.'%')
+                            ->orWhere('description', 'like', '%'.$search.'%')
+                            ->orWhere('total_with_iva', 'like', '%'.$search.'%')
+                            ->orWhere('currency', 'like', '%'.$search.'%')
+                            ->orWhere('status', 'like', '%'.$search.'%')
                             ->paginate($rows);
+
 
             $this->_response = $orders;
         } 
@@ -62,8 +68,8 @@ class OrdersController extends Controller
         $id = $request->input('id');
 
         $validator = Validator::make($request->all(), [
-            'customer_name' => 'required|alpha|max:80',
-            'customer_surname' => 'required|alpha|max:80',
+            'customer_name' => 'required|max:80',
+            'customer_surname' => 'required|max:80',
             'customer_email' => 'required|email|max:120',
             'customer_type_document'=> 'required|max:4',
             'customer_mobile' => 'required|numeric',
@@ -71,7 +77,7 @@ class OrdersController extends Controller
             'total_order' => 'required|numeric',
             'iva_order' => 'required|numeric',
             'total_with_iva' => 'required|numeric',
-            'currency'=> 'required|alpha',
+            'currency'=> 'required',
             'product' => 'required',
             'description' => 'required',
         ]);
@@ -145,7 +151,7 @@ class OrdersController extends Controller
                     'allowPartial'=> 'false'
                 ),
                 'expiration' => $$expirationDate,
-                'returnUrl'  => env('RETURN_URL').'/4ere31='.$order->id,
+                'returnUrl'  => env('RETURN_URL').'?4ere31='.$order->id,
                 'ipAddress'  => $ip,
                 'userAgent'  => $_SERVER['HTTP_USER_AGENT']
             );
@@ -211,19 +217,13 @@ class OrdersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $id = $request->input('id');
 
-
-        if(0 != $id)
-        {
-            $emailValidation = 'unique:users,email,' . $id;
-        }
-
         $validator = Validator::make($request->all(), [
             'id' => 'required',
-            'status' => 'required'
+            'status' => 'required|alpha'
         ]);
 
         if ($validator->fails()) 

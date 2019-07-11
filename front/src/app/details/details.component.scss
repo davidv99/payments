@@ -1,25 +1,29 @@
-.comments{
-	color: #563784;
-	padding-top: 40px;
-	padding-bottom: 30px;
-	width: 80%;
-	& .user-img{
-		width: 55%;
-	}
-	& .section-button {
-		color: #000;
-	}
+.max-img {
+  max-width: 500px !important;
+}
+
+.comments {
+  color: #563784;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  width: 80%;
+  & .user-img {
+    width: 55%;
+  }
+  & .section-button {
+    color: #000;
+  }
 }
 
 .panel-white {
   border: 1px solid #dddddd;
 }
-.panel-white  .panel-heading {
+.panel-white .panel-heading {
   color: #333;
   background-color: #fff;
   border-color: #ddd;
 }
-.panel-white  .panel-footer {
+.panel-white .panel-footer {
   background-color: #fff;
   border-color: #ddd;
 }
